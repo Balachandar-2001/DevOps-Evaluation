@@ -1,23 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: devops-evaluation
   labels:
     app: devops-evaluation
+
 spec:
   replicas: 2
+
   selector:
     matchLabels:
       app: devops-evaluation
-    
+
   template:
     metadata:
-      lables:
+      labels:
         app: devops-evaluation
+
     spec:
       containers:
-       - name: devops-evaluation
-         image: 30balachandar333/devops-evaluation:latest
-         imagePullPolicy: Always
-         ports:
-           containerPort: 80
+      - name: devops-evaluation
+
+        image: 30balachandar333/devops-evaluation:latest
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 80
