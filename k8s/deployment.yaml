@@ -39,6 +39,10 @@ spec:
         - configMapRef:
             name: devops-config
 
+        envFrom:
+        - secretRef:
+            name: devops-secret
+
         resources:
           requests:
             memory: "128Mi"
