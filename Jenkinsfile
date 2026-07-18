@@ -36,6 +36,15 @@ pipeline
             }
         }
 
+        stage('Deploy k8 folder to the Kube Cluster'){
+            steps {
+                sh """
+                  kubectl apply -f k8s/
+                """
+            }
+
+        }
+
         stage('Deploy to the Kube Cluster'){
             steps {
                 sh """
