@@ -44,7 +44,7 @@ pipeline
 
         stage('Run Docker Container') {
             steps {
-                sh "docker run --name devops-evaluation -p 5000:80 ${IMAGE_NAME}:${BUILD_NUMBER}"
+                sh "docker run --name devops-evaluation -d -p 5000:80 ${IMAGE_NAME}:${BUILD_NUMBER}"
             }
         }
 
