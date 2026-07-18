@@ -35,6 +35,13 @@ pipeline
             }
         }
 
+        stage('Stop and Remove Existing Container') {
+            steps {
+                sh "docker stop devops-evaluation || true"
+                sh "docker rm -f devops-evaluation || true"
+            }
+        }
+
         stage('Run Docker Container') {
             steps {
                 sh "docker run --name devops-evaluation -p 5000:80 ${IMAGE_NAME}:${BUILD_NUMBER}"
