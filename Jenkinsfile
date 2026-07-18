@@ -39,8 +39,8 @@ pipeline
         stage('Deploy to the Kube Cluster'){
             steps {
                 sh """
-                  kubectl set image deployment/react-deployment react-container=${IMAGE_NAME}:${BUILD_NUMBER}
-                  kubectl rollout status deployment/react-deployment              
+                  kubectl set image deployment/devops-evaluation devops-evaluation=${IMAGE_NAME}:${BUILD_NUMBER}
+                  kubectl rollout status deployment/devops-evaluation              
                 """
             }
         }
